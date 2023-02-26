@@ -104,7 +104,10 @@ const Login = () => {
             isLoggedIn: true,
           })
         );
+        localStorage.setItem("id", res.userInfo.EMAIL);
+        localStorage.setItem("pw", loginPassword);
         localStorage.setItem("accessToken", res.token);
+        localStorage.setItem("loginStatus", "true");
         resetInput();
         history.push("/");
         setLoading(false);
